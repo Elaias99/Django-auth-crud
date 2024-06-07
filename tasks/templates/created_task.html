@@ -1,0 +1,33 @@
+<!--Proporciona un formulario para crear nuevas tareas.-->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+
+        <div class="col-md-4 offset-md-4">
+        <form action="/tasks/create/" method="post" class="card card-body">
+
+
+            <h1>Create Tarea</h1>
+
+            {{error}}
+
+            {% csrf_token %}
+            {{form}} <!--Muestra el formulario TaskForm como párrafos. -->
+
+            <button class="btn btn-primary">
+                Save
+            </button>
+
+        </form>
+
+        </div>
+        
+    </div>
+</main>
+
+    
+
+{% endblock %}
